@@ -20,7 +20,6 @@ return new class extends Migration
             $table->integer('totalPrice')->unsigned()->comment('訂單總金額');
             $table->string('nickName', 30)->comment('當下用戶暱稱');
             $table->char('cellphone', 9)->comment('當下手機號碼');
-            $table->boolean('isActivated')->comment('帳號狀態 1:啟用 0:停權');
             $table->dateTime('createdAt');
             $table->dateTime('updatedAt');
         });

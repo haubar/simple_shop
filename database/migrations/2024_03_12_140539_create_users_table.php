@@ -12,14 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::dropIfExists('users');
-        
+
         Schema::create('Users', function (Blueprint $table) {
             $table->increments('id');
             $table->char('userID', 32)->unique()->comment('用戶ID');
             $table->string('nickName', 30)->comment('用戶暱稱');
             $table->char('cellphone', 9)->comment('手機號碼');
             $table->char('passsword', 60)->comment('密碼');
-            $table->boolean('isActivated')->comment('帳號狀態 1:啟用 0:停權');
+            $table->boolean('isActivated')->default(1)->comment('帳號狀態 1:啟用 0:停權');
             $table->dateTime('createdAt');
             $table->dateTime('updatedAt');
         });
